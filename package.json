@@ -1,0 +1,14 @@
+{
+  "name": "personal-deck",
+  "version": "1.0.0",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "mdx-deck": "^2.3.2",
+    "prism-react-renderer": "^0.1.6"
+  },
+  "scripts": {
+    "start": "mdx-deck deck/index.mdx",
+    "build": "mdx-deck build deck/index.mdx"
+  }
+}
