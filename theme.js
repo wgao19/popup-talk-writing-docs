@@ -1,7 +1,113 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import nightOwlTheme from "prism-react-renderer/themes/nightOwl";
 import meta from "./meta.js";
+
+// night owl theme with customizations
+const nightOwlTheme = /*: PrismTheme */ {
+  plain: {
+    color: "#d6deeb",
+    backgroundColor: "#011627"
+  },
+  styles: [
+    {
+      types: ["changed"],
+      style: {
+        color: "rgb(162, 191, 252)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["deleted"],
+      style: {
+        color: "rgba(239, 83, 80, 0.56)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["inserted", "attr-name"],
+      style: {
+        color: "rgb(173, 219, 103)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["comment"],
+      style: {
+        color: "yellow",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["string", "url"],
+      style: {
+        color: "rgb(173, 219, 103)"
+      }
+    },
+    {
+      types: ["variable"],
+      style: {
+        color: "rgb(214, 222, 235)"
+      }
+    },
+    {
+      types: ["number"],
+      style: {
+        color: "rgb(247, 140, 108)"
+      }
+    },
+    {
+      types: ["builtin", "char", "constant", "function"],
+      style: {
+        color: "rgb(130, 170, 255)"
+      }
+    },
+    {
+      // This was manually added after the auto-generation
+      // so that punctuations are not italicised
+      types: ["punctuation"],
+      style: {
+        color: "rgb(199, 146, 234)"
+      }
+    },
+    {
+      types: ["selector", "doctype"],
+      style: {
+        color: "rgb(199, 146, 234)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["class-name"],
+      style: {
+        color: "rgb(255, 203, 139)"
+      }
+    },
+    {
+      types: ["tag", "operator", "keyword"],
+      style: {
+        color: "rgb(127, 219, 202)"
+      }
+    },
+    {
+      types: ["boolean"],
+      style: {
+        color: "rgb(255, 88, 116)"
+      }
+    },
+    {
+      types: ["property"],
+      style: {
+        color: "rgb(128, 203, 196)"
+      }
+    },
+    {
+      types: ["namespace"],
+      style: {
+        color: "rgb(178, 204, 214)"
+      }
+    }
+  ]
+};
 
 const Code = ({ children, className: [languageClassName] }) => {
   const language =
@@ -28,8 +134,9 @@ const Code = ({ children, className: [languageClassName] }) => {
             css={{
               padding: "1rem",
               borderRadius: "4px",
-              fontSize: "2.5vh",
+              fontSize: "3vh",
               width: "65ch",
+              maxWidth: "95%",
               overflow: "auto",
               alignSelf: "center"
             }}
@@ -61,65 +168,69 @@ const Provider = ({
   eventLink,
   description,
   children,
-  image
+  image,
+  displayHeader,
+  displayFooter
 }) => (
   <React.Fragment>
-    <nav
-      css={{
-        padding: "1rem",
-        display: "flex",
-        width: "100vw",
-        position: "fixed",
-        top: 0,
-        background: "white",
-        fontFamily: "'Libre Baskerville', Baskerville, sans-serif",
-        fontSize: "1.5rem",
-        color: "#222"
-      }}
-    >
-      <span css={{ fontStyle: "italic" }}>{speaker}</span>&nbsp;👩🏻‍🌾
-      <span css={{ padding: "0 .25em", color: "#aaa" }}>—</span>
-      <span css={{ color: "#aaa" }}>{title}</span>
-      <a
-        href={eventLink}
-        target="_blank"
+    {displayHeader && (
+      <nav
         css={{
-          marginLeft: "auto",
-          color: "#aaa",
-          fontStyle: "italic",
-          fontSize: ".75em",
-          textDecoration: "none"
+          padding: "1rem",
+          display: "flex",
+          width: "100vw",
+          position: "fixed",
+          top: 0,
+          background: "white",
+          fontFamily: "'Libre Baskerville', Baskerville, sans-serif",
+          fontSize: "1.5rem",
+          color: "#222"
         }}
-      >{`${event} — ${date}`}</a>
-    </nav>
-    <main>{children}</main>
-    <footer
-      css={{
-        padding: "1rem",
-        display: "flex",
-        width: "100vw",
-        position: "fixed",
-        bottom: 0,
-        background: "white",
-        fontFamily: "'Libre Baskerville', Baskerville, sans-serif",
-        fontSize: "1.5rem",
-        color: "#222"
-      }}
-    >
-      <a
-        css={{
-          color: "#222",
-          textDecoration: "none",
-          fontStyle: "italic",
-          padding: "0 .25em",
-          marginLeft: "auto"
-        }}
-        href={`https://twitter.com/${twitter}`}
-        target="_blank"
       >
-        @{twitter}
-      </a>
-    </footer>
+        <span css={{ fontStyle: "italic" }}>{speaker}</span>&nbsp;👩🏻‍🌾
+        <span css={{ padding: "0 .25em", color: "#aaa" }}>—</span>
+        <span css={{ fontStyle: "italic", color: "#aaa" }}>{title}</span>
+        <a
+          href={eventLink}
+          target="_blank"
+          css={{
+            marginLeft: "auto",
+            color: "#aaa",
+            textDecoration: "none"
+          }}
+        >{`${event} — ${date}`}</a>
+      </nav>
+    )}
+    <main>{children}</main>
+    {displayFooter && (
+      <footer
+        css={{
+          padding: "1rem",
+          display: "flex",
+          width: "100vw",
+          position: "fixed",
+          bottom: 0,
+          background: "white",
+          fontFamily: "'Libre Baskerville', Baskerville, sans-serif",
+          fontSize: "1.5rem",
+          color: "#222"
+        }}
+      >
+        <a
+          css={{
+            color: "#222",
+            textDecoration: "none",
+            fontStyle: "italic",
+            padding: "0 .25em",
+            marginLeft: "auto"
+          }}
+          href={`https://twitter.com/${twitter}`}
+          target="_blank"
+        >
+          @{twitter}
+        </a>
+      </footer>
+    )}
   </React.Fragment>
 );
 
@@ -136,7 +247,8 @@ const custom = {
       margin: "1rem 0"
     },
     small: {
-      fontSize: ".5em"
+      fontSize: ".5em",
+      maxWidth: "40vw"
     },
     "blockquote + small": {
       paddingLeft: "calc(2rem + 7px)"

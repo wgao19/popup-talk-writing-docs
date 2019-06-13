@@ -1,8 +1,10 @@
 export default {
-  title: "title",
-  speaker: "Wei Gao",
+  title: "On Writing Docs",
+  speaker: "wei",
   twitter: "wgao19",
-  date: "June 7, 2019",
+  date: "June 14, 2019",
   event: "React Knowledgeable",
-  eventLink: "https://twitter.com/reknowledgeable"
+  eventLink: "https://twitter.com/reknowledgeable",
+  displayFooter: false,
+  displayHeader: true
 };
