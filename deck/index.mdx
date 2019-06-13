@@ -1,58 +1,335 @@
-export { default as theme } from '../theme';
+export { default as theme } from "../theme";
+import { Appear } from "mdx-deck";
+import Notes from "../components/Notes";
+import { Split } from "@mdx-deck/layouts";
 
-# Title
-
----
-
-## Heading
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
+# On Writing Docs
 
 ---
 
-## Text
+## me and docs
 
-The headers are well-spaced so that the hierarchy is clear.
+- React Redux
+- Docusaurus
+- ...more
 
-- lists will help you
-- present the key points
-- that you want your users to remember
-  - and you may nest them
-    - multiple times
+<Notes>
 
----
+What I've been doing with docs
 
-## Quote
+(stuff)
 
-> Every repo must come with a mascot
->
-> -- :3
+If you've found any typos, don't tell me. Go ahead and issue a pull request. But what I'd like to talk about today is how you can do better and why you should.
+
+</Notes>
 
 ---
 
-## Code
+> I learn by writing docs.
 
-```jsx
-export const Highlight = ({ children, color }) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}
-  >
-    {children}
-  </span>
-);
-```
+<Notes>
+
+- you'll understand the subject matter in depth and thoroughly
+
+  - note the reasoning though, to be more precise "learning oriented writing"
+
+- you'll need to explain it well
+
+  - clarity to **other** people
+  - friendliness
+
+- on the flip side, write as you learn gets you closest to your confusions
+
+  - so don't think you're not "pro enough" to work on docs
+
+</Notes>
+
+---
+
+### The Feynman Technique
+
+- Choose a Concept
+- Teach it to a Toddler
+- Identify Gaps and Go Back to The Source Material
+- Review and Simplify
+
+<Notes>
+
+Writing docs is this process repeated over and over in micro cycles until the docs are perfect.
+
+</Notes>
+
+---
+
+[Basic Tutorial (React Redux)](https://react-redux.js.org/introduction/basic-tutorial)
+
+<Notes>
+
+Intended to be as a step-by-step guide to first time users
+
+Problems encountered:
+
+- do we want to use action creators?
+- do we maintain a normalized store, or a big array of objects?
+- do we use `switch` statements?
+
+- what's the best practice for React Redux?
+- should we talk about Redux? (cuz a lot of people confuse the two and thought Redux is doing the work RR is doing or vice versa)
+
+</Notes>
+
+---
+
+![](https://i.imgur.com/UPEo4Ia.png)
+
+<Notes>
+
+Here is a slightly intermediate level problem. We were writing about how connect's mapStateToProps parameter connects your component.
+
+... explain the optimization
+
+... explain the mistake
+
+When you solve problems, you can stop once you find the answer to that specific problem. It's a bottom-up approach and it is very short-lived.
+
+When you write the docs, before you put those words down to paper, in this case up on the site, you want to make sure you are saying the right thing. So you want to explain what `connect` does, you will have to read the sourcecode until you have certain level of confidence that you are not bullshitting things out based on your own imagination.
+
+It's a top-down approach. And one higher layer of understanding will encourage you to go even one more layer up.
+
+</Notes>
+
+---
+
+> I don't know anything, but I do know that everything is interesting if you go into it deeply enough.
+
+<small>– Richard Feynman</small>
+
+---
+
+Technical documentation closes the gap between implementation and intuition.
+
+[highlight navigator](https://github.com/facebook/Docusaurus/pull/1524/commits/71d1529cd57b2f4e8961bd33dab659d2ae5b0687)
+
+[revised](https://github.com/facebook/Docusaurus/pull/1524#discussion_r289010508)
+
+<Notes>
+
+When you try to either explain things to others, or try to “simplify” your language, the trick I find useful is to think of this process as closing the gap between (mostly imperical) implementation and intuition.
+
+And better off, stay close with the intuition side.
+
+</Notes>
+
+---
+
+You _don't_ need to be an expert before contributing to docs.
+
+<Notes>
+
+Document as you learn the subject matter.
+
+- You're closest to your confusions
+- You perfect your learning
+
+A lot of thought leaders would agree with this
+
+- Kyle Simpson, a.k.a. Getify, the guy who wrote You Don't Know JS, wrote another book on funcitonal programming _as_ he learned the subject.
+
+But they probably won't tell you that not all scenarios fit in this category. You need to be a bit strategic in your choice of topic.
+
+</Notes>
+
+---
+
+<Split>
+
+<div css={{alignSelf: 'flex-start'}}>
+
+### Great choices
+
+- Tutorials
+- API references
+- Intuitive understanding
+- Motivations
+
+</div>
+
+<div css={{alignSelf: 'flex-start'}}>
+
+### Maybe not that great
+
+- Best practices
+- Specific use cases
+
+(but they're good next steps :)
+
+</div>
+
+</Split>
+
+<Notes>
+
+intuition: especially good practice of writing
+
+motivations: need to dig into history, which is normally very interesting
+
+best practices: not familiar as beginner, need more expertise, debatable,
+
+they're still decent choice if you have access to sufficient guidance or research materials
+
+specific use cases are slightly risky, should wait until the full set of docs have a nice balance in its meta language
+
+</Notes>
+
+---
+
+### Curious?
+
+- Maintainers call for doc PRs, [Rewrite React-Redux docs completely](https://github.com/reduxjs/react-redux/issues/1001)
+- Your own learning & improvements, [typescript-vs-flowtype#55](https://github.com/niieani/typescript-vs-flowtype/pull/55)
+- Write blogs
+
+<Notes>
+
+If you cannot find those projects, just PR along your own learning.
+
+Don't just fix typos, find more meaningful improvements.
+
+Practice your writing and explanation skills on small topics. Create PR, and no need to care too much they get merged or not. If they're merged, that means they're good. If not, don't judge yourself.
+
+Write blogs.
+
+</Notes>
+
+---
+
+[Learn in Public](https://twitter.com/swyx/status/1009174159690264579?s=20)
+
+<Notes>
+
+Here is a post that talks about why and how you may want to contribute back to the community as you learn from this community.
+
+This has been one piece of advice I've had in mind as I work on the things people see on my portfolio, as well as as I run this sharing.
+
+So it's really something I resemble a lot with. And the reason why I put this as the end of this talk is that I'm really very excited that I've invited him to come over next week, and give us a talk on this matter.
+
+We're curating a list of questions you may ask.
+
+</Notes>
+
+---
+
+[bongo](https://twitter.com/ProfFeynman/status/1122538947366678532)
+
+---
+
+trash
+
+## 👆
+
+> Building docs for a project is a very comprehensive task
+
+<Notes>
+
+- page layout
+- seo
+- portion of content
+
+</Notes>
+
+---
+
+## ✌️
+
+> Personal faith in docs
+
+<Notes>
+
+- if docs are well written, you save people's time, both users and your maintainers / contributors
+  - there is an accumulative effect in this: if docs are well written, your community is well educated, that frees people up to be able to work on more in-depth work
+  - a counter example is how you can look at, similar product, the side with crappier docs got people more confused
+- docs as a meta language to your product
+  - chenglou's talk
+  - react redux's dispatch props
+  - redux thunk
+
+</Notes>
+
+---
+
+![](https://img.alicdn.com/imgextra/i1/2374578474/TB1KgrblsnI8KJjSspeXXcwIpXa_!!0-item_pic.jpg_430x430q90.jpg)
+
+---
+
+![](https://i.ebayimg.com/images/i/123323342924-0-1/s-l1000.jpg)
+
+---
+
+### Personal faith
+
+> Save time for both users and maintainers
+
+---
+
+### Personal faith
+
+> You get an accumulative benefit if your users and maintainers are well-educated
+
+---
+
+![](https://i.imgur.com/KGPeg4N.png)
+
+---
+
+[What is the official way to type connect ( from flow-typed/react-redux) after 0.85? #7493](https://github.com/facebook/flow/issues/7493)
+
+<Notes>
+
+a counter example is how you can look at, similar product, the side with crappier docs got people more confused
+
+</Notes>
+
+---
+
+![](https://i.imgur.com/sf4Goh9.png)
+
+---
+
+![](https://i.imgur.com/hjKFEwF.png)
+
+---
+
+#### Personal faith
+
+> The meta language of your project
+
+---
+
+`mapDispatchToProps` is a function, no?
+
+<Appear>
+
+> I say “little-known” because I’ve seen people blown away by how simple this can be… but then, some people seem to have learned this on Day 1 and figure everyone else knows about it 🤷
+
+<small>
+  Dave Ceddia.{" "}
+  <a href="https://daveceddia.com/redux-mapdispatchtoprops-object-form/">
+    You Might Not Need The mapDispatchToProps Function
+  </a>
+</small>
+
+</Appear>
+
+---
+
+[Redux Thunk](https://github.com/reduxjs/redux-thunk/blob/master/src/index.js)
+
+---
+
+[Taming the Meta Language](https://www.youtube.com/watch?v=_0T5OSSzxms)
+
+Cheng Lou
+
+---
+
+## Curious?
