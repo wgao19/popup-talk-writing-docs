@@ -29,18 +29,37 @@ If you've found any typos, don't tell me. Go ahead and issue a pull request. But
 
 <Notes>
 
-- you'll understand the subject matter in depth and thoroughly
+Throughout the past few months writing docs, here's one thing I learned about myself. I learn by writing docs.
 
-  - note the reasoning though, to be more precise "learning oriented writing"
+I mean, some people may learn by, say, solving problems. I do that too. Although, I find myself learning _more_ by writing docs.
 
-- you'll need to explain it well
+And to be precise, I learn by sharing with others about a topic. This gets us something called the Feynman technique.
 
-  - clarity to **other** people
-  - friendliness
+</Notes>
 
-- on the flip side, write as you learn gets you closest to your confusions
+---
 
-  - so don't think you're not "pro enough" to work on docs
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg/440px-RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg)
+
+<Notes>
+
+Does everybody know this person?
+
+This is Richard Feynman. Feynman was a physicist at California Institute of Technology. His is, even up till today, widely known by his Feynman notes on physics, which is not written by him, but his lecture notes transcribed. These books secured my degree - - because my major requires some higher level physics classes which I wasn't very good at. And Feynman's notes are written so sensibly that I not only ended up passing, getting a good score, but also liking physics quite a lot.
+
+Feynman was a Nobel Laureate for his work in Quantum Physics. Although, he is perhaps even more prominently recognized for his invention of Feynman diagram.
+
+</Notes>
+
+---
+
+![](https://www.researchgate.net/profile/Melanie_Tory/publication/319224539/figure/fig2/AS:597049166811151@1519359022878/Richard-Feynmans-1975-Dodge-van-Feynman-had-the-behavior-model-of-subatomic-particles.png)
+
+<Notes>
+
+The Feynman diagram does not state any theorems, instead it is a notational tool to help people visualize rather complex physics ideas intuitively.
+
+In fact, this becomes a contribution highly recognized by the science community because it helps people understand physics better. So such contribution does not only extend to helping unrelated people like me to pass our degrees, but the whole community in a large sense.
 
 </Notes>
 
@@ -48,12 +67,16 @@ If you've found any typos, don't tell me. Go ahead and issue a pull request. But
 
 ### The Feynman Technique
 
-- Choose a Concept
-- Teach it to a Toddler
-- Identify Gaps and Go Back to The Source Material
-- Review and Simplify
+- Choose a concept
+- Teach it to a toddler
+- Identify gaps and go back to the source material
+- Review and simplify
 
 <Notes>
+
+Feynman advocates his way of learning that is now referred to as the “Feynman technique”.
+
+(Explain)
 
 Writing docs is this process repeated over and over in micro cycles until the docs are perfect.
 
@@ -64,6 +87,8 @@ Writing docs is this process repeated over and over in micro cycles until the do
 [Basic Tutorial (React Redux)](https://react-redux.js.org/introduction/basic-tutorial)
 
 <Notes>
+
+(Example)
 
 Intended to be as a step-by-step guide to first time users
 
@@ -84,7 +109,7 @@ Problems encountered:
 
 <Notes>
 
-Here is a slightly intermediate level problem. We were writing about how connect's mapStateToProps parameter connects your component.
+Here is a slightly intermediate example. We were writing about how connect's mapStateToProps parameter connects your component.
 
 ... explain the optimization
 
@@ -108,6 +133,8 @@ It's a top-down approach. And one higher layer of understanding will encourage y
 
 Technical documentation closes the gap between implementation and intuition.
 
+[demo](https://docusaurus.io/docs/en/adding-blog)
+
 [highlight navigator](https://github.com/facebook/Docusaurus/pull/1524/commits/71d1529cd57b2f4e8961bd33dab659d2ae5b0687)
 
 [revised](https://github.com/facebook/Docusaurus/pull/1524#discussion_r289010508)
@@ -121,6 +148,30 @@ And better off, stay close with the intuition side.
 </Notes>
 
 ---
+
+## Where to get started
+
+---
+
+Maintainers calling for doc PRs,
+
+- [Rewrite React-Redux docs completely](https://github.com/reduxjs/react-redux/issues/1001)
+
+<Notes>
+
+It's _great_ if you see some projects have maintainers willing to help with docs.
+
+Most likely they are very familiar with the subject matter already, but may not have the time to do the actual doc writing. Because it really takes a lot of time.
+
+Reach out and say you're willing to help. Docs tasks are less popular in general. Then, read the doc pieces and posts that the maintainers have already written. Pick out the content that is relavant and phrase them in ways that suits doc setting.
+
+Proofread carefully, _avoid_ grammar errors.
+
+</Notes>
+
+---
+
+**Secret**
 
 You _don't_ need to be an expert before contributing to docs.
 
@@ -143,7 +194,7 @@ But they probably won't tell you that not all scenarios fit in this category. Yo
 
 <Split>
 
-<div css={{alignSelf: 'flex-start'}}>
+<div>
 
 ### Great choices
 
@@ -154,7 +205,7 @@ But they probably won't tell you that not all scenarios fit in this category. Yo
 
 </div>
 
-<div css={{alignSelf: 'flex-start'}}>
+<div>
 
 ### Maybe not that great
 
@@ -183,21 +234,60 @@ specific use cases are slightly risky, should wait until the full set of docs ha
 
 ---
 
-### Curious?
+**Secret**
 
-- Maintainers call for doc PRs, [Rewrite React-Redux docs completely](https://github.com/reduxjs/react-redux/issues/1001)
-- Your own learning & improvements, [typescript-vs-flowtype#55](https://github.com/niieani/typescript-vs-flowtype/pull/55)
-- Write blogs
+Be consistent and outspoken.
+
+- [typescript-vs-flowtype#55](https://github.com/niieani/typescript-vs-flowtype/pull/55)
 
 <Notes>
 
-If you cannot find those projects, just PR along your own learning.
+I was learning about Flow and I've been intentionally very outspoken about it, despite the fact that I am normally very very private. I was learning about call properties and I pulled up a PR on it. Then people came in and pointed out what I wrote was wrong (like I wasn't familiar with TypeScript), and taught me things I never learned about. Particularly interesting was some insight regarding the nature of JavaScript which I would not have read anywhere unless one of the discussions included an example that reveals the intuition behind it.
 
-Don't just fix typos, find more meaningful improvements.
+Most people don't generate content as they learn. I don't know a specific proportion but it is very low. The ratio to _initiate_ generating content is even fewer.
 
-Practice your writing and explanation skills on small topics. Create PR, and no need to care too much they get merged or not. If they're merged, that means they're good. If not, don't judge yourself.
+But if _you_ are the person who initiates generating stuff, people will come and tell you about things they know.
 
-Write blogs.
+I mean, people constantly tell other people about things they know, but if _you_ start generating stuff, that becomes a node where people will start commenting on.
+
+Especially, people will tell you when they spot your mistakes. It will take some getting used to cuz your day to day interaction people tend to avoid that.
+
+</Notes>
+
+---
+
+**Secret**
+
+You can always write blogs.
+
+<Notes>
+
+Not for others, for yourself.
+
+You'll feel the benefit _after_ you start writing the blogs.
+
+- interesting reactions
+- learn about your own writing, your own tone
+- sth you know about and people constantly asking you about, you have a blog post, then just send them the link lor
+- most importantly, you learn the subject better as you write
+
+</Notes>
+
+---
+
+> If you feel like you’ve learned something in the past few years I deeply recommend starting a blog, if only to catalog your thoughts.
+
+<small>
+  Dan Abramov.{" "}
+  <a href="https://twitter.com/dan_abramov/status/1079214023881707520">
+    <i>Dec 29 2018</i>
+  </a>
+  .
+</small>
+
+<Notes>
+
+This is not advice from me. I got that from Dan Abramov.
 
 </Notes>
 
@@ -207,9 +297,11 @@ Write blogs.
 
 <Notes>
 
-Here is a post that talks about why and how you may want to contribute back to the community as you learn from this community.
+Here is one that has a deeper root.
 
-This has been one piece of advice I've had in mind as I work on the things people see on my portfolio, as well as as I run this sharing.
+It talks about why and how you may want to contribute back to the community as you learn from this community.
+
+This has been one piece of advice I've had in mind as I work on the things people see on my blog, as well as as I run this sharing.
 
 So it's really something I resemble a lot with. And the reason why I put this as the end of this talk is that I'm really very excited that I've invited him to come over next week, and give us a talk on this matter.
 
