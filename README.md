@@ -1,5 +1,7 @@
 # Learn as I Write the Docs
 
+🖥 [Slides](https://learn-as-i-write-the-docs.netlify.com/)
+
 ## Intro
 
 Throughout the past few months writing docs, here's one thing I learned about myself. I learn by writing docs. I mean, some people may learn by, say, solving problems. I do that too. Although, I find myself learning more by writing docs.
